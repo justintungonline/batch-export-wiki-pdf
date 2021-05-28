@@ -20,6 +20,11 @@ Accept-Language:en-US,en;q=0.8
 Connection:keep-alive
 User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36 OPR/44.0.2510.857
     '''
+# Accept:*/*
+# Accept-Encoding:gzip, deflate, br
+# Accept-Language:en-US,en;q=0.9
+# Connection:keep-alive
+# User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
 
     headersMap = dict()
     for item in headersBrower.splitlines():
@@ -31,6 +36,7 @@ User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko
     return headersMap
 
 # 如果wiki需要登录验证,先用浏览器访问wiki,登录以后,获取该用户的cookie信息. cookie信息一般包含JSESSIONID
+# If the wiki requires login verification, first visit the wiki with a browser, and after logging in, obtain the user's cookie information. The cookie information generally contains JSESSIONID 
 def genereateCookies():
     cookieString = "_ga=GA1.3.273810098.1586630235;_gid=GA1.3.675279261.1597723624;experimentation_subject_id=IjkzMDdhNzNjLTAzMDktNGUzMS1hYzU1LTI0NjRjY2E4MjYyNyI%3D--f002c85e1db2fefbd3d550a15109d30479a5d6a0;confluence.browse.space.cookie=space-attachments;confluence.last-web-item-clicked=system.space.tools%2Fcontenttools%2Fbrowse;confluence.list.pages.cookie=list-content-tree;JSESSIONID=3FC4541A6670C36CFEE6F224599B3A72;mywork.tab.tasks=false;seraph.confluence=62096200%3A3e0667e29c8765815702b7d6f9c4bcf7370fd60f;"
     cookieMap1 = {}
@@ -49,7 +55,7 @@ def save_file(url, path):
         logging.debug("exist path=" + path)
         return
 
-    logging.debug("将 %s 保存到 %s" % (url, path))
+    logging.debug("将 / Save %s 保存到 / to %s" % (url, path))
 
     logging.debug("start get " + url)
 
@@ -132,7 +138,7 @@ def get_sub_pages_url(parentUrl):
 
 def validateTitle(title):
     rstr = r"[\/\\\:\*\?\"\<\>\|]"  # '/ \ : * ? " < > |'
-    new_title = re.sub(rstr, "_", title)  # 替换为下划线
+    new_title = re.sub(rstr, "_", title)  # 替换为下划线 / Replace with underscore
     return new_title
 
 def export_wiki(wiki_title, wiki_page_url, dir):
@@ -155,6 +161,7 @@ def export_wiki(wiki_title, wiki_page_url, dir):
 logging.basicConfig(level=logging.DEBUG)
 
 # 请先修改generateHeaders和genereateCookies方法的配置
+# Please modify the configuration of the generateHeaders and generateCookies methods first 
 wiki_page_url = "http://wiki.host/pages/viewpage.action?pageId=126531340"
 wiki_title = "08.工作总结"
 dir = "."
