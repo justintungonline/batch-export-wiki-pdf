@@ -77,7 +77,7 @@ def save_file(url, path):
     else:
         print("error ", resp.status_code)
 
-# TODO parse based on cloud page URL https://HOST.atlassian.net/wiki/spaces/SPACENAME/pages/PAGEID/PAGENAME
+# TODO parse based on cloud page URL https://HOST.atlassian.net/wiki/spaces/SPACENAME/pages/PAGEID/PAGENAME and keep previous parsing method based on pageID attribute
 def parse_host_pageId_fromurl(url):
     # r = urlsplit(url)
 
