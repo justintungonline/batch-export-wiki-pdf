@@ -22,8 +22,8 @@ Edit the script file with your configurations:
 
 - Confluence URL
 - Directory where PDF(s) should be exported to
-- Name of section/space
-- Cookie
+- Name of Confluence wiki section/space
+- Cookie (e.g. JSESSIONID)
 
 Run it
 
