@@ -16,3 +16,17 @@ Get pyquery
 pip install pyquery
 ```
 
+## Run
+
+Edit the script file with your configurations:
+
+- Confluence URL
+- Directory where PDF(s) should be exported to
+- Name of section/space
+- Cookie
+
+Run it
+
+```sh
+python wiki_export.py
+```
