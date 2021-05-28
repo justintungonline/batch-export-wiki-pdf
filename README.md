@@ -8,6 +8,8 @@ English: Export wiki (confluence) pages in batches to pdf files, including sub-p
 
 ## Installation requirements
 
+Have Python 3.8+
+
 Get pyquery
 
 ```sh
