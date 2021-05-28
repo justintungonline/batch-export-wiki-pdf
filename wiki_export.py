@@ -160,9 +160,12 @@ def export_wiki(wiki_title, wiki_page_url, dir):
 
 logging.basicConfig(level=logging.DEBUG)
 
+# Temporarily capture urllib3 warnings, TODO implement recommendations at https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+logging.captureWarnings(True)
+
 # 请先修改generateHeaders和genereateCookies方法的配置
 # Please modify the configuration of the generateHeaders and generateCookies methods first 
-wiki_page_url = "http://wiki.host/pages/viewpage.action?pageId=126531340"
-wiki_title = "08.工作总结"
+wiki_page_url = "https://host.atlassian.net/wiki/pages/viewpage.action?pageId=2356412743"
+wiki_title = "Support"
 dir = "."
 export_wiki(wiki_title, wiki_page_url, dir)
